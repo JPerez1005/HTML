@@ -1,0 +1,15 @@
+p{
+    width: 80%;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: darkred;
+}
+
+img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
