@@ -197,31 +197,30 @@ section{
     width: 100%;
 }
 
-.box ul{
+.box ol{
     width: 100%;
     position: relative;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-.box ul a{
+.box ol a{
     text-decoration: none;
     color: #fff;
 }
 
-.box ul li{
-    list-style: none;
+.box ol li{
     padding: 10px;
     width: 100%;
     box-shadow: 0 5px 25px rgba(0, 0, 0, .1);
     transition: transform 0.5s;
-    margin-left: 0;
+    margin-left: 40px;
     /* background: rgba(0, 0, 0, .5); */
     /* opacity: 0; */
 }
 
 
-.box ul li:hover{
+.box ol li:hover{
     transform: scale(1.1);
     z-index: 100;
     box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
