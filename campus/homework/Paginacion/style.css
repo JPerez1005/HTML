@@ -16,8 +16,13 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-body{
-    background: var(--first-color);
+video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-width: 120%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 section{
@@ -49,7 +54,8 @@ section{
 .tab_menu{
     color: var(--text-color);
     list-style: none;
-    background: var(--third-color);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
     max-width: 800px;
     padding: 7px;
     white-space: nowrap;
@@ -59,6 +65,12 @@ section{
     overflow-x: auto;
     user-select: none;/*evitamos el moverse con el scroll*/
     scroll-behavior: smooth;
+    z-index: 1;
+}
+
+.tab_menu.dragging{
+    scroll-behavior: unset;
+    cursor: grab;
 }
 
 .tab_menu::-webkit-scrollbar{
@@ -78,12 +90,16 @@ section{
     transition: 0.3s ease;
 }
 
+.tab_menu.dragging .tab_btn{
+    pointer-events: none;
+}
+
 .tab_btn:hover{
-    background: var(--second-color);
+    background: #000;
 }
 
 .tab_btn.active{
-    background: var(--second-color);
+    background: #000;
 }
 
 .left_btn,
@@ -91,8 +107,9 @@ section{
     position: absolute;
     color: var(--text-color);
     font-size: 1.8em;
-    padding: 12px;
+    padding: 10px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .left_btn{
@@ -111,4 +128,110 @@ section{
 }
 
 /* tab content */
+
+.tab_content{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tab{
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+    max-width: 1100px;
+    padding: 15px 50px;
+    transform: translateY(25px);
+    content-visibility: hidden;
+    opacity: 0;
+}
+
+.tab.active{
+    transform: translateX(0px);
+    content-visibility: visible;
+    opacity: 1;
+    transition: 2s ease;
+}
+
+.tab .row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    gap: 30px;
+}
+
+/* Lista */
+.countries{
+    color: white;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countries .box{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    /* background-image: url(../Assets/Tierra0.jpg); */
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.box h2{
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.box ul{
+    width: 100%;
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.box ul a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.box ul li{
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .1);
+    transition: transform 0.5s;
+    margin-left: 0;
+    /* background: rgba(0, 0, 0, .5); */
+    /* opacity: 0; */
+}
+
+
+.box ul li:hover{
+    transform: scale(1.1);
+    z-index: 100;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+    color: #fff;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    cursor: pointer;
+    /* opacity: 1; */
+}
+
 /* Media queries (max-width: 1050px) */

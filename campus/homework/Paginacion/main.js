@@ -27,8 +27,57 @@ btnLeft.addEventListener("click", () => {
 
 window.onload=function(){
     btnRight.style.display=tabMenu.scrollWidth>tabMenu.clientWidth || tabMenu.scrollWidth >= window.innerWidth ? 'block' : 'none';
+    btnLeft.style.display=tabMenu.scrollWidth>=window.innerWidth ? "" : "none";
 }
 
 window.onresize=function(){
     btnRight.style.display=tabMenu.scrollWidth>tabMenu.clientWidth || tabMenu.scrollWidth >= window.innerWidth ? 'block' : 'none';
+    btnLeft.style.display=tabMenu.scrollWidth>=window.innerWidth ? "" : "none";
+
+    let scrollLeftValue=Math.round(tabMenu.scrollLeft);
+
+    btnLeft.style.display=scrollLeftValue > 0 ? 'block': 'none';
 }
+
+//javascript to make the tap navigation draggable
+let activeDrag = false;
+
+tabMenu.addEventListener("mousemove", (drag) => {
+    if(!activeDrag) return;
+    tabMenu.scrollLeft -= drag.movementX;
+    IconVisibility();
+    tabMenu.classList.add('dragging');
+});
+
+document.addEventListener("mouseup", ()=>{
+    activeDrag = false;
+    tabMenu.classList.remove('dragging');
+})
+
+tabMenu.addEventListener("mousedown", ()=>{
+    activeDrag = true;
+});
+
+//Javascript to view tab contents on click tab buttons
+const tabs = d.querySelectorAll(".tab");
+const tabBtns = d.querySelectorAll(".tab_btn");
+
+const tab_Nav=function(tabBtnClick){
+
+    tabBtns.forEach((tabBtn)=>{
+        tabBtn.classList.remove("active");
+    });
+
+    tabs.forEach((tab)=>{
+        tab.classList.remove('active');
+    });
+
+    tabBtns[tabBtnClick].classList.add("active");
+    tabs[tabBtnClick].classList.add('active');
+}
+
+tabBtns.forEach((tabBtn, i)=>{
+    tabBtn.addEventListener('click',()=>{
+        tab_Nav(i);
+    });
+});
