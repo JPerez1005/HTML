@@ -368,7 +368,7 @@ section {
 /* ==================== About section css code ============================ */
 .about {
     display: flex;
-    justify-content: space-between;
+    justify-content:  space-around;
     align-items: center;
     gap: 1rem;
 }
@@ -382,20 +382,8 @@ section {
     height: auto;
 }
 
-.about-img .ring {
-    position: absolute;
-    top: 22%;
-    right: 1%;
-}
-
-.about-img .circle {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-}
-
 .about-content {
-    padding: 3rem 0;
+    margin-left: 10%;
 }
 
 .about-content h2 {
@@ -439,7 +427,8 @@ section {
 
 .about-btn button.active {
     background: var(--gradient-color-bg);
-    color: #ffff;
+    color: #000000;
+    font-weight: bold;
 }
 
 .text-box {
@@ -510,7 +499,7 @@ section {
     background: var(--gradient-color-bg);
     width: 70px;
     height: 70px;
-    color: #fff;
+    color: #000;
     font-size: 2.5rem;
     display: inline-flex;
     justify-content: center;
