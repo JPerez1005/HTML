@@ -3,7 +3,7 @@ $(window).on('scroll',function(){
   var scrolled = $(this).scrollTop();
   $('.efecto1').css({
     'transform':'translate3d(0, ' + (scrolled * .20) + 'px,0)',
-    'opacity':1 - scrolled / 400
+    'opacity':1 - scrolled / 100
   });
 
   //efecto2
@@ -29,8 +29,4 @@ $(window).on('scroll',function(){
     'transform':'translate3d(0, ' + (d * .30) + 'px,0)',
     'opacity':1 - d / 900
   });
-
-
-
 })
-

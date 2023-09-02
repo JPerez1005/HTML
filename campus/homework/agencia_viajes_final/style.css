@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -22,7 +23,7 @@ body{
     background-size: cover;
     background-position: bottom;
     position: absolute;
-    top: 10%;
+    top:0;
     height: 110%;
     width: 100%;
     z-index: 5;
@@ -167,15 +168,19 @@ h2{
 
 
 /* SECCION DESCUBRIR */
-.descubrir .contenido-seccion{
+
+.discover{
+    margin-top: 200px;
+}
+
+.discover .contenido-seccion{
     position: relative;
     width: 100%;
-    bottom:  150px;
 }
-.descubrir .contenido-seccion img{
+.discover .contenido-seccion img{
     width: 100%;
 }
-.descubrir .contenido-seccion .info{
+.discover .contenido-seccion .info{
     position: absolute;
     text-align: center;
     top: 0;
@@ -184,13 +189,13 @@ h2{
     transform: translateX(-50%);
     padding-top: 150px;
 }
-.descubrir .contenido-seccion .info p{
+.discover .contenido-seccion .info p{
     color: #666;
     font-size: 18px;
     margin-top: 15px;
     line-height: 25px;
 }
-.descubrir .contenido-seccion button{
+.discover .contenido-seccion button{
     background-color: #fff;
     border: none;
     border: 2px solid #334755;
@@ -200,39 +205,8 @@ h2{
     margin-top: 40px;
     cursor: pointer;
 }
-/* SECCION COLECCION */
-.coleccion{
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-}
-.coleccion .fila{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-.coleccion .fila img{
-    max-height: 120px;
-}
-.coleccion .fila .col{
-    margin: 0 30px;
-    border: 2px solid #334755;
-    max-width: 200px;
-    width: 100%;
-    text-align: center;
-}
-.coleccion .fila .col .nombre{
-    color: #334755;
-    text-transform: uppercase;
-    font-size: 15px;
-    margin: 20px 0;
-}
-.coleccion .fila .col h3{
-    border: 2px solid #334755;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 5px 15px;
-}
+
+
 /* SECCION SURFING */
 .surfing{
     background: url(img/surfing.png);
@@ -245,7 +219,7 @@ h2{
     bottom: 50px;
     text-align: center;
     width: 100%;
-    color: #ffe538;
+    color: black;
 }
 /* SECCION SUBSCRIBASE */
 .subscribase{
