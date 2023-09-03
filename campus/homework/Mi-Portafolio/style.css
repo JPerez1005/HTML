@@ -375,11 +375,13 @@ section {
 
 .about .about-img {
     position: relative;
+    transition: .3s ease;
 }
 
 .about .about-img .aboutHero {
     width: 40vw;
     height: auto;
+    transition: .3s ease;
 }
 
 .about-content {
@@ -650,7 +652,8 @@ section {
 .fillter-buttons button:hover,
 button.mixitup-control-active {
     background: var(--gradient-color-bg);
-    color: #fff;
+    color: #000;
+    font-weight: bold;
 }
 
 .portfolio-gallery {
